@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* Custom theme using Tailwind v4 CSS variables */
+@theme {
+  --color-primary-50: #f0f4ff;
+  --color-primary-100: #e0e9ff;
+  --color-primary-500: #4f46e5;
+  --color-primary-600: #4338ca;
+  --color-primary-700: #3730a3;
+
+  --shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-soft-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+
+  --spacing-sidebar-width: 280px;
+
+  --animate-bounce-soft: bounce 1s infinite;
+  --animate-pulse-soft: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom global styles */
+
+* {
+  transition-property: color, background-color, border-color;
+  transition-duration: 200ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-lg;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Glass morphism effect */
+.glass {
+  @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-md;
+}
